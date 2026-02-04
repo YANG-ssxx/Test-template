@@ -7,6 +7,12 @@ assignees: ''
 
 ---
 
+---
+title: "bug"  # 默认标题
+labels: ["bug", "needs-triage"]  # 自动添加的标签
+assignees: ["你的GitHub用户名"]  # 自动分配的人
+---
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
