@@ -1,0 +1,83 @@
+# 表单名称（显示在 Issue 选择界面）
+name: 🐛 Bug 报告
+# 表单描述
+description: 提交一个 Bug，帮助项目改进
+# 默认 Issue 标题前缀
+title: "[Bug]: "
+# 自动给 Issue 添加的标签
+labels: ["bug", "needs-triage"]
+# 自动分配的人员（替换成你的 GitHub 用户名，多个用 ["user1", "user2"]）
+assignees: []
+# 表单主体内容（核心字段）
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你抽出时间提交 Bug 报告！请尽可能填写完整信息，方便我们快速排查。
+  - type: input
+    id: contact
+    attributes:
+      label: 联系方式（可选）
+      description: 若需要进一步沟通，我们如何联系你？
+      placeholder: 例：邮箱 xxx@xxx.com / 微信 xxx
+    validations:
+      required: false
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug 描述
+      description: 清晰、简洁地描述这个 Bug 是什么。
+      placeholder: 例：点击登录按钮后，页面无响应且控制台报错。
+    validations:
+      required: true  # 必选字段
+  - type: textarea
+    id: reproduce-steps
+    attributes:
+      label: 复现步骤
+      description: 详细描述如何复现这个 Bug（步骤越清晰，排查越快）。
+      placeholder: |
+        1. 打开页面：xxx.com/login
+        2. 输入账号：test@163.com
+        3. 输入密码：123456
+        4. 点击「登录」按钮
+        5. 观察到 Bug 出现
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 预期行为
+      description: 你原本期望发生什么？
+      placeholder: 例：点击登录按钮后，跳转到个人中心页面。
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: 实际行为
+      description: 现在实际发生了什么？
+      placeholder: 例：点击登录按钮后，页面无任何反应，F12 控制台显示 "Uncaught ReferenceError: $ is not defined"。
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图/录屏（可选）
+      description: 若有相关截图或录屏，可粘贴在此处（直接拖拽图片即可）。
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: 环境信息
+      description: 你遇到 Bug 时的运行环境（系统、浏览器、项目版本等）。
+      placeholder: 例：Windows 11 + Chrome 120.0.0.0 + 项目 v1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: 额外备注（可选）
+      description: 关于这个 Bug 的其他补充信息。
+    validations:
+      required: false
